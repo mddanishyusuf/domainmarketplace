@@ -7,7 +7,13 @@ export default function Home({ domains }) {
         <div className="main-container">
             <h2 className="margin-0">Domain Marketplace</h2>
             <p style={{ maxWidth: 500, color: '#666' }}>This is a place where you can find domains that are available to sale and also create your domain profile.</p>
-            <button className="button button--primary">Create Your Domain Profile</button>
+
+            <a
+                href="https://github.com/mddanishyusuf/domainmarketplace/blob/main/README.md"
+                target="_blank"
+            >
+                <button className="button button--primary">Create Your Domain Profile</button>
+            </a>
             <br />
             <br />
             <DomainTable
