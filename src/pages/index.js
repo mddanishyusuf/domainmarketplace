@@ -36,6 +36,7 @@ export default function Home({ domains }) {
                 <DomainTable
                     initialDomains={domains}
                     owner
+                    hideWebsite
                 />
             </div>
         </>

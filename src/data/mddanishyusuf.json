@@ -180,11 +180,25 @@
             "website": "https://emaillayer.io"
         },
         {
-            "domain": "llmapis.co",
-            "tld": ".co",
-            "price": 299,
+            "domain": "deployapis.com",
+            "tld": ".com",
+            "price": null,
+            "status": "Thinking",
+            "website": "https://deployapis.com"
+        },
+        {
+            "domain": "microinvest.app",
+            "tld": ".app",
+            "price": 499,
             "status": "For Sale",
-            "website": "https://llmapis.co"
+            "website": "https://microinvest.app"
+        },
+        {
+            "domain": "searchdatainsights.com",
+            "tld": ".com",
+            "price": 2999,
+            "status": "For Sale",
+            "website": "https://searchdatainsights.com"
         }
     ]
 }

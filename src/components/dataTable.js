@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { LinkExternalLight, ArrowUpDown, ArrowUp, ArrowDown } from '@/lib/icons';
 import Link from 'next/link';
 
-const DomainTable = ({ initialDomains, owner }) => {
+const DomainTable = ({ initialDomains, owner, hideWebsite }) => {
     const [sortConfig, setSortConfig] = useState({
         key: null,
         direction: null,
@@ -81,7 +81,8 @@ const DomainTable = ({ initialDomains, owner }) => {
                                 </div>
                             </th>
                         ))}
-                        <th className="no-sort">Website</th>
+                        {!hideWebsite && <th className="no-sort">Website</th>}
+
                         {owner && <th className="no-sort">Owner</th>}
                     </tr>
                 </thead>
@@ -96,17 +97,20 @@ const DomainTable = ({ initialDomains, owner }) => {
                             <td>
                                 <span className={`status-badge ${item.status.toLowerCase().replace(/\s+/g, '-')}`}>{item.status}</span>
                             </td>
-                            <td>
-                                <a
-                                    href={item.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="website-link"
-                                >
-                                    Visit
-                                    <LinkExternalLight className="external-icon" />
-                                </a>
-                            </td>
+                            {!hideWebsite && (
+                                <td>
+                                    <a
+                                        href={item.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="website-link"
+                                    >
+                                        Visit
+                                        <LinkExternalLight className="external-icon" />
+                                    </a>
+                                </td>
+                            )}
+
                             {owner && (
                                 <td style={{ textDecoration: 'underline' }}>
                                     <Link href={`/${item.username}`}>{item.username}</Link>
